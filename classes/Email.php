@@ -51,9 +51,7 @@ class Email {
     }
 
     public function enviarInstrucciones () {
-
-        //correo destinatario
-        $address = $this->email; 
+ 
         //crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
@@ -65,7 +63,7 @@ class Email {
         $mail->Port = $_ENV['MAIL_PORT'];
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($address, 'AppSalon.com');
+        $mail->addAddress('cuentas@appsalon.com', 'Appsalon.com');
         $mail->Subject = 'Restablece tu contraseña';
  
         //SET HTML
