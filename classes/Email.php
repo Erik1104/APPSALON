@@ -61,7 +61,7 @@ class Email {
         $mail->Password = $_ENV['MAIL_PASSWORD'];
         $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV['MAIL_PORT'];
-        
+
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Restablece tu contraseña';
@@ -72,7 +72,7 @@ class Email {
  
         $contenido = "<html>";
         $contenido .= "<p><strong> Hola " . $this->nombre . "</strong> Has solicitado restablecer tu contraseña, sigue el siguiente enlace para hacerlo. </p>";
-        $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "recuperar-password?token=" . $this->token . "'>Confirmar Cuenta </a> </p>";
+        $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['SERVER_HOST'] . "recuperar?token=" . $this->token . "'>Confirmar Cuenta </a> </p>";
         $contenido .= "<p> Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;
