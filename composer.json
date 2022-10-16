@@ -1,0 +1,23 @@
+{
+    "name": "esteban/appsalon",
+    "description": "Proyecto PHP8, MVC, SQL, SASS, GULP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erik1104",
+            "email": "steve110453@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
