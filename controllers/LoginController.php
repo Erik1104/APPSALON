@@ -132,7 +132,7 @@ class LoginController {
                 $usuario->password = null;
                 $usuario->password = $password->password;
                 $usuario->hashPassword();
-                $usuario->token = null;
+                $usuario->token = '';
                 $resultado = $usuario->guardar();
 
                 if($resultado) {
@@ -216,7 +216,7 @@ class LoginController {
             Usuario::setAlerta('error', 'Token no valido');
         } else {
             $usuario->confirmado = '1';
-            $usuario->token = null;
+            $usuario->token = '';
             $usuario->guardar();
             Usuario::setAlerta('exito', 'Cuenta comprobada correctamente');
         }
